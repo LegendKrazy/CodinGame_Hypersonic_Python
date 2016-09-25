@@ -1,0 +1,47 @@
+game_width = 13
+game_height = 11
+
+x=0, y = 0 is the TOP LEFT CELL
+
+Floor cells = .
+Boxes = 0
+
+Random amount of boxes range 30 to 65
+
+After 200 rounds, the player who hit the most boxes with their bombs wins.
+
+The game state of every round is given to you as a list of entities,
+each with a: entityType, owner, position, param1 and param2.
+
+Players:
+    The entityType will be:
+        For players: 0.
+
+    The owner will be:
+        For players: id of the player (0 or 1).
+
+    The param1 will be:
+        For players: number of bombs the player can still place.
+
+    The param2 is not useful for the current league, and will always be:
+        For players: explosion range of the player's bombs (=3).
+Bomb:
+    The entityType will be:
+        For bombs: 1.
+
+    The owner will be:
+        For bombs: id of the bomb's owner.
+
+    The param1 will be:
+        For bombs: number of rounds left until the bomb explodes.
+
+    The param2 is not useful for the current league, and will always be:
+        For bombs: explosion range of the bomb (=3).
+
+
+Check current position
+
+>>> testlist
+[1, 2, 3, 5, 3, 1, 2, 1, 6]
+>>> [i for i,x in enumerate(testlist) if x == 1]
+[0, 5, 7]
